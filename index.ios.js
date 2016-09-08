@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import List from './components/list.react';
 import Styles from './styles/main';
 import Button from 'react-native-button';
+import Dimensions from 'Dimensions';
 import {
   AppRegistry,
   StyleSheet,
@@ -13,10 +14,13 @@ import {
 
 class RadioNative extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      test: require('./img/Play_btn.png'),
-    };
+     super(props);
+
+     this.width = Dimensions.get('window').width;
+     this.height = Dimensions.get('window').height;
+     this.state = {
+       test: require('./img/Play_btn.png'),
+     };
   }
 
   _handleClick() {
@@ -26,17 +30,18 @@ class RadioNative extends Component {
   render() {
     return (
       <View style={Styles.mainView}>
-      <View>
-        <Image source={require('./img/cover.jpg')} style={Styles.image} />
-        <Text onPress={() => this._loginBtnClick()}>Hello</Text>
-        <TouchableHighlight onPress={this._handleClick.bind(this)} style={MainStyles.button}
-          underlayColor="#CA5D3E">
-          <View>
-            <Image source={this.state.test} style={Styles.playButton}/>
-          </View>
-        </TouchableHighlight>
-        <List/>
-      </View>
+      <Image source={require('./img/Covers/img10.jpg')} style={Styles.backgroundImage}>
+        <View style={Styles.box}>
+          <Text></Text>
+          <TouchableHighlight onPress={this._handleClick.bind(this)} style={MainStyles.button}
+            underlayColor="#CA5D3E">
+            <View>
+              <Image source={this.state.test} style={Styles.playButton}/>
+            </View>
+          </TouchableHighlight>
+          <List/>
+        </View>
+      </Image>
       </View>
     );
   }

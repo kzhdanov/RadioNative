@@ -17,15 +17,27 @@ let Styles = StyleSheet.create({
     borderColor: '#fff',
   },
   mainView: {
-    marginTop: 0,
-    alignItems: 'center',
-    flexDirection: 'column',
-    justifyContent: 'center',
     flex: 1,
   },
   playButton: {
     width: 100,
     height: 100,
+  },
+  backgroundImage: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+  },
+  box: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,.6)',
+    marginLeft: -100,
   },
 });
 
